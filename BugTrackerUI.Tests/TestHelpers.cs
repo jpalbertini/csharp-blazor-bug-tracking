@@ -15,7 +15,7 @@ namespace BugTrackerUI.Tests
         public static Type GetClassType(string fullName)
         {
             Type parentType = typeof(ComponentBase);
-            Assembly assembly = Assembly.Load("BugTrackerUI");
+            Assembly assembly = Assembly.Load(_projectName);
             Type[] types = assembly.GetTypes();
 
             IEnumerable<Type> subclasses = types.Where(t => t.IsSubclassOf(parentType));
